@@ -18,7 +18,7 @@
       <label for="employeeSalary">Employee Salary:</label>
       <input type="number" id="employeeSalary" name="employeeSalary" class="form-control"/>
 
-      <input type="submit" value="Submit Employee" />
+      <input type="submit" value="Submit Employee" class="submitButton" />
     </div>
     </form>
   </div>
@@ -35,10 +35,16 @@
         </tr>
       </thead>
       <tbody id="container">
+        <tr ng-repeat='employee in home.employees'>
+            <td ng-model='employee.first_name' >{{employee.first_name}}</td>
+            <td ng-model='employee.last_name' >{{employee.last_name}}</td>
+            <td ng-model='employee.first_name' >{{employee.employee_id}}</td>
+            <td ng-model='employee.first_name' >{{employee.job_title}}</td>
+            <td ng-model='employee.first_name' >{{employee.employee_salary}}</td>
       </tbody>
     </table>
   </div>
   <div>
-    Total Monthly Salary:  <span id="monthlySalary">0</span>
+    <h2>Total Monthly Salary: </h2> <span id="monthlySalary" >${{home.monthlySalary}}</span>
   </div>
 </div>

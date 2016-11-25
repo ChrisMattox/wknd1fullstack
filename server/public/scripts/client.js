@@ -14,8 +14,28 @@ app.config(['$routeProvider', function($routeProvider) {
 }]); //close app.config
 
 //setting controller for home app
-app.controller('HomeController', function() {
+app.controller('HomeController', ["$http", function($http) {
   console.log('home controller running');
   var self = this;
   self.message = "Home controller is the best!";
-});
+  self.employees = [];
+  getEmployees();
+  function getEmployees() {
+    $http.get('routes/home')
+    .then(function(response){
+      self.employees = response.data;
+      console.log("employee data: ", self.employees);
+
+      //empty variable to hold total salary
+      var totalSalary = 0;
+
+      //loops thru the employeeArray and adds salary to total salary
+      for(var i = 0; i < self.employees.length; i++) {
+        totalSalary += Number(self.employees[i].employee_salary);
+      }
+      //set the monthly salary for angular proper
+      self.monthlySalary = Math.round(totalSalary/12);
+
+    });
+  }
+}]);

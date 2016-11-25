@@ -2,6 +2,15 @@ body {
   background-color: #CCFFFF;
 }
 
+h2 {
+  padding-bottom: 5px;
+  border-bottom: 2px solid lightgrey;
+}
+
+#monthlySalary {
+  font-size: 60px;
+}
+
 .mainPadding {
   margin: 10px;
   padding: 20px;
@@ -13,10 +22,19 @@ body {
   position: inherit;
 }
 
+.submitButton {
+  margin-top: 10px;
+}
+
+.row {
+  background-color: #292c2f;
+  border-top: 5px solid magenta;
+  border-bottom: 5px solid magenta;
+}
 
 .jumbotron {
     margin-bottom: 0px;
-    background-image: url(http://www.desktopwallpaperhd.net/wallpapers/17/6/blue-vector-clouds-devianart-nkspace-175270.jpg);
+    background-image: url('http://www.pptbackgroundstemplates.com/backgrounds/clouds-vector-ppt-backgrounds-powerpoint.jpg');
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -36,6 +54,7 @@ body {
 	padding: 55px 50px;
 	margin-top: 80px;
   position:relative;
+  border-top: 5px solid magenta;
 
 }
 
@@ -201,4 +220,4 @@ body {
   left: 0%;
 }
 
-footer { position: absolute; left: 0; bottom: 0; height: 100px; width: 100%; }
+/*footer { position: absolute; left: 0; bottom: 0; height: 100px; width: 100%; }*/
