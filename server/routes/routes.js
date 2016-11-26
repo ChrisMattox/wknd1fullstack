@@ -41,9 +41,10 @@ router.post('/home', function(req, res) {
       function(err, result) {
         done();
         if(err) {
-          console.log('insert query error: ', err);
+          console.log('No stuff in fields, so insert query error: ', err);
           res.sendStatus(500);
         } else {
+          console.log("New Employee", newEmployee);
           res.sendStatus(201);
         }
       });

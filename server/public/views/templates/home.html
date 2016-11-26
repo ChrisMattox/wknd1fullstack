@@ -1,27 +1,30 @@
 <div class ="mainPadding">
+
 <h2>Enter Employee Info</h2>
-  <div>
-    <form id="employeeinfo">
+      <form id="employee-form" ng-submit="home.postEmployee()">
       <div class="form-group">
-      <label for="employeeFirstName">Employee First Name:</label>
-      <input type="text" id="employeeFirstName" name="employeeFirstName" class="form-control"/>
-
-      <label for="employeeLastName">Employee Last Name:</label>
-      <input type="text" id="employeeLastName" name="employeeLastName" class="form-control"/>
-
-      <label for="employeeIdNumber">Employee ID Number:</label>
-      <input type="number" id="employeeIdNumber" name="employeeIdNumber" class="form-control"/>
-
-      <label for="employeeJobTitle">Employee Job Title:</label>
-      <input type="text" id="employeeJobTitle" name="employeeJobTitle" class="form-control"/>
-
-      <label for="employeeSalary">Employee Salary:</label>
-      <input type="number" id="employeeSalary" name="employeeSalary" class="form-control"/>
-
-      <input type="submit" value="Submit Employee" class="submitButton" />
-    </div>
+      <label for="first_name">Employee First Name:</label>
+      <input type="text" id="first_name" ng-model="home.newEmployee.first_name" name="first_name" class="form-control"/>
+      </div>
+      <div class="form-group">
+      <label for="last_name">Employee Last Name:</label>
+      <input type="text" id="last_name" ng-model="home.newEmployee.last_name" name="last_name" class="form-control"/>
+      </div>
+      <div class="form-group">
+      <label for="employee_id">Employee ID Number:</label>
+      <input type="number" id="employee_id" ng-model="home.newEmployee.employee_id" name="employee_id" class="form-control"/>
+      </div>
+      <div class="form-group">
+      <label for="job_title">Employee Job Title:</label>
+      <input type="text" id="job_title" ng-model="home.newEmployee.job_title" name="job_title" class="form-control"/>
+      </div>
+      <div class="form-group">
+      <label for="employee_salary">Employee Salary:</label>
+      <input type="number" id="employee_salary" ng-model="home.newEmployee.employee_salary" name="employee_salary" class="form-control"/>
+      </div>
+      <button id="employee-submit" class="btn btn-default">Submit Employee</button>
     </form>
-  </div>
+
   <div>
     <h2>Container</h2>
     <table class="table table-hover table-inverse">
