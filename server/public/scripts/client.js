@@ -34,7 +34,6 @@ app.controller('HomeController', ["$http", function($http) {
     $http.get('routes/home')
     .then(function(response){
       self.employees = response.data;
-      console.log("employee data: ", self.employees);
       //empty variable to hold total salary
       var totalSalary = 0;
       //loops thru the employeeArray and adds salary to total salary
@@ -52,11 +51,13 @@ app.controller('HomeController', ["$http", function($http) {
     console.log("its clicking");
     $http.post('routes/home', self.newEmployee)
     .then(function(response){
-      console.log("Send from post employee", self.newEmployee);
       self.newEmployee = {};
       getEmployees();
     });
   }
+
+  //create function for toggle
+
 }]);
 
 app.controller('BudgetController', ["$http", function($http) {

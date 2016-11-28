@@ -5,7 +5,6 @@ var connectionString = 'postgres://localhost:5432/sigma';
 
 //warehouse view
 router.get('/home', function(req, res) {
-  console.log('get request');
   // get employees from DB
   pg.connect(connectionString, function(err, client, done) {
     if(err) {
@@ -20,7 +19,6 @@ router.get('/home', function(req, res) {
         console.log('select query error: ', err);
         res.sendStatus(500);
       }
-      console.log(result.rows);
       res.send(result.rows);
 
     });
@@ -44,11 +42,12 @@ router.post('/home', function(req, res) {
           console.log('No stuff in fields, so insert query error: ', err);
           res.sendStatus(500);
         } else {
-          console.log("New Employee", newEmployee);
           res.sendStatus(201);
         }
       });
   });
 });
+
+//set up router.put for toggle button
 
 module.exports = router;
