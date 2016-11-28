@@ -58,6 +58,11 @@ app.controller('HomeController', ["$http", function($http) {
 
   //create function for toggle
 
+    self.toggleEmployee = function(){
+      console.log("toggle works");
+      
+    }
+
 }]);
 
 app.controller('BudgetController', ["$http", function($http) {
