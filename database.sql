@@ -4,7 +4,8 @@ CREATE TABLE employeeSalary (
   last_name VARCHAR(50) NOT NULL,
   employee_id INTEGER NOT NULL,
   job_title VARCHAR(50) NOT NULL,
-  employee_salary INTEGER NOT NULL
+  employee_salary INTEGER NOT NULL,
+  active BOOLEAN DEFAULT true
 );
 
 INSERT INTO employeeSalary (first_name, last_name, employee_id, job_title, employee_salary)

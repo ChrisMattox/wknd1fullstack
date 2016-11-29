@@ -1,29 +1,29 @@
 <div class ="mainPadding">
 
-<h2>Enter Employee Info</h2>
-      <form id="employee-form" ng-submit="home.postEmployee()">
-      <div class="form-group">
+  <h2>Enter Employee Info</h2>
+  <form id="employee-form" ng-submit="home.postEmployee()">
+    <div class="form-group">
       <label for="first_name">Employee First Name:</label>
       <input type="text" id="first_name" ng-model="home.newEmployee.first_name" name="first_name" class="form-control" placeholder="First Name" />
-      </div>
-      <div class="form-group">
+    </div>
+    <div class="form-group">
       <label for="last_name">Employee Last Name:</label>
       <input type="text" id="last_name" ng-model="home.newEmployee.last_name" name="last_name" class="form-control" placeholder="Last Name"/>
-      </div>
-      <div class="form-group">
+    </div>
+    <div class="form-group">
       <label for="employee_id">Employee ID Number:</label>
       <input type="number" id="employee_id" ng-model="home.newEmployee.employee_id" name="employee_id" class="form-control" placeholder="ID Number"/>
-      </div>
-      <div class="form-group">
+    </div>
+    <div class="form-group">
       <label for="job_title">Employee Job Title:</label>
       <input type="text" id="job_title" ng-model="home.newEmployee.job_title" name="job_title" class="form-control" placeholder="Job Title"/>
-      </div>
-      <div class="form-group">
+    </div>
+    <div class="form-group">
       <label for="employee_salary">Employee Salary:</label>
       <input type="number" id="employee_salary" ng-model="home.newEmployee.employee_salary" name="employee_salary" class="form-control" placeholder="Employee Salary"/>
-      </div>
-      <button id="employee-submit" class="btn btn-default">Submit Employee</button>
-    </form>
+    </div>
+    <button id="employee-submit" class="btn btn-default">Submit Employee</button>
+  </form>
 
   <div>
     <h2>Container</h2>
@@ -35,25 +35,26 @@
           <th>ID number</th>
           <th>Job title</th>
           <th>Salary</th>
+          <th>Active/Inactive</th>
         </tr>
       </thead>
       <tbody id="container">
         <tr ng-repeat='employee in home.employees'>
-            <td ng-model='employee.first_name' >{{employee.first_name}}</td>
-            <td ng-model='employee.last_name' >{{employee.last_name}}</td>
-            <td ng-model='employee.employee_id' >{{employee.employee_id}}</td>
-            <td ng-model='employee.job_title' >{{employee.job_title}}</td>
-            <td ng-model='employee.employee_salary' >{{employee.employee_salary}}</td>
-            <td ng-model='employee.toggle'>
+          <td ng-model='employee.first_name' >{{employee.first_name}}</td>
+          <td ng-model='employee.last_name' >{{employee.last_name}}</td>
+          <td ng-model='employee.employee_id' >{{employee.employee_id}}</td>
+          <td ng-model='employee.job_title' >{{employee.job_title}}</td>
+          <td ng-model='employee.employee_salary' >{{employee.employee_salary}}</td>
+          <td ng-model='employee.toggle'>
             <label class="switch">
-            <input type ="checkbox" ng-model='employee.toggle' ng-click="home.toggleEmployee()" >
-            <div class="slider"></div>
+              <input type ="checkbox" ng-click="home.toggleEmployee()" ng-true-value="active" ng-false-value="inactive" >
+              <div class="slider"></div>
             </label>
-            </td>
-      </tbody>
-    </table>
+          </td>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h2>Total Monthly Salary: </h2> <span id="monthlySalary" >${{home.monthlySalary}}</span>
+    </div>
   </div>
-  <div>
-    <h2>Total Monthly Salary: </h2> <span id="monthlySalary" >${{home.monthlySalary}}</span>
-  </div>
-</div>

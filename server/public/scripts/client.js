@@ -37,7 +37,7 @@ app.controller('HomeController', ["$http", function($http) {
       //empty variable to hold total salary
       var totalSalary = 0;
       //loops thru the employeeArray and adds salary to total salary
-      for(var i = 0; i < self.employees.length; i++) {
+      for (var i = 0; i < self.employees.length; i++) {
         totalSalary += Number(self.employees[i].employee_salary);
       }
       //set the monthly salary for angular proper
@@ -58,10 +58,10 @@ app.controller('HomeController', ["$http", function($http) {
 
   //create function for toggle
 
-    self.toggleEmployee = function(){
-      console.log("toggle works");
-      
-    }
+  self.toggleEmployee = function(){
+    console.log("toggle works");
+
+  }
 
 }]);
 
